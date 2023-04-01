@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>2001 Dice Game</title>
+</head>
+<body>
+<div class="container">
+
+    <h1>...</h1>
+    <form action="" method="POST">
+        <fieldset>
+            <legend>Select dice size:</legend>
+            <!--D3, D4, D6, D8, D10, D12, D20, D100-->
+
+            <input type="radio" id="D3" name="dice" value="3">
+            <label for="D3">D3</label>
+
+            <input type="radio" id="D4" name="dice" value="4">
+            <label for="D4">D4</label>
+
+            <input type="radio" id="D6" name="dice" value="6" checked>
+            <label for="D6">D6</label>
+
+            <input type="radio" id="D8" name="dice" value="8">
+            <label for="D8">D8</label>
+
+            <input type="radio" id="D10" name="dice" value="10">
+            <label for="D4">D10</label>
+
+            <input type="radio" id="D12" name="dice" value="12">
+            <label for="D12">D12</label>
+
+            <input type="radio" id="D20" name="dice" value="20">
+            <label for="D20">D20</label>
+
+            <input type="radio" id="D100" name="dice" value="100">
+            <label for="D100">D100</label>
+        </fieldset>
+
+        <input class="btn" type="submit" name="Roll" value="Roll">
+        <input type="hidden" name="comp_score" value="{{ comp_score }}">
+        <input type="hidden" name="player_score" value="{{ player_score }}">
+    </form>
+        <h2>Player score: {{ player_score }}</h2>
+        <h2>Computer score: {{ comp_score }}</h2>
+
+    {% if result %}
+        <h2>{{ result }}</h2>
+    {% endif %}
+</div>
+
+
+</body>
+</html>
