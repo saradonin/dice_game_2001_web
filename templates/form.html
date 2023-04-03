@@ -9,6 +9,7 @@
 <div class="container">
 
     <h1>2001 Dice Game</h1>
+
     <form action="" method="POST">
         <fieldset class="radio">
             <legend>Select dice size:</legend>
@@ -38,18 +39,20 @@
             <input type="radio" id="D100" name="dice" value="100">
             <label for="D100">D100</label>
         </fieldset>
-        <div class="buttons">
-            <input class="btn" type="submit" name="Roll" value="Roll">
-            <input type="hidden" name="comp_score" value="{{ comp_score }}">
-            <input type="hidden" name="player_score" value="{{ player_score }}">
-        </div>
-    </form>
-        <div class="text">
-            <h2>Player score: {{ player_roll }} = {{ player_score }}</h2>
-            <h2>Computer score: {{ comp_roll }} = {{ comp_score }}</h2>
+        <div class="lower">
+            <div class="buttons">
+                <input class="btn" type="submit" name="Roll" value="Roll">
+                <input type="hidden" name="comp_score" value="{{ comp_score }}">
+                <input type="hidden" name="player_score" value="{{ player_score }}">
+            </div>
+        </form>
+            <div class="text">
+                <h2>Player score: {{ player_roll }} = {{ player_score }}</h2>
+                <h2>Computer score: {{ comp_roll }} = {{ comp_score }}</h2>
+            </div>
         </div>
     {% if result %}
-        <h2>{{ result }}</h2>
+        <h1>{{ result }}</h1>
     {% endif %}
 </div>
 
