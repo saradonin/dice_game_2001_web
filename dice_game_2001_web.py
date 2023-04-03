@@ -7,6 +7,12 @@ app = Flask(__name__)
 
 
 def calculate_score(score, roll):
+    """
+    Takes score and roll values and calculates new score value based on given mathematical model.
+    :param score: int - score before the current roll
+    :param roll: tuple(int, int) - current roll values
+    :return: int - score after current roll
+    """
     if sum(roll) == 7:
         score = score // 7
     elif sum(roll) == 11:
@@ -19,10 +25,14 @@ def calculate_score(score, roll):
 
 @app.route("/", methods=['POST', 'GET'])
 def roll(num=2):
+    """
+    Takes number of dice to roll and input from user. Returns announcement of the winner.
+    :param num: int - number of dice rolled
+    :return: str - result
+    """
     if request.method == "GET":
         return render_template("form.html", player_score=0, comp_score=0)
     else:
-        player_size = int(request.form.get("dice"))
         player_score = int(request.form.get("player_score", 0))
         comp_score = int(request.form.get("comp_score", 0))
 
