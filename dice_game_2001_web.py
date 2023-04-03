@@ -46,6 +46,9 @@ def roll(num=2):
             elif player_score <= 2001 and comp_score > 2001:
                 result = "Computer wins!"
                 return render_template("form.html", player_score=player_score, comp_score=comp_score, result=result)
+            elif player_score > 2001 and comp_score > 2001:
+                result = "Draw!"
+                return render_template("form.html", player_score=player_score, comp_score=comp_score, result=result)
 
 
 if __name__ == "__main__":
