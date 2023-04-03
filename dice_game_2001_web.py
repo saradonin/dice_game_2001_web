@@ -36,11 +36,10 @@ def roll(num=2):
             player_score = calculate_score(player_score, player_roll)
             comp_score = calculate_score(comp_score, comp_roll)
 
-            player_roll_str = ", ".join([str(i) for i in player_roll])
-            comp_roll_str = ", ".join([str(i) for i in comp_roll])
+            # player_roll_str = ", ".join([str(i) for i in player_roll])
+            # comp_roll_str = ", ".join([str(i) for i in comp_roll])
             if player_score < 2001 and comp_score < 2001:
-                return render_template("form.html", player_score=player_score, comp_score=comp_score,
-                                       player_roll=player_roll_str, comp_roll=comp_roll_str)
+                return render_template("form.html", player_score=player_score, comp_score=comp_score)
             elif player_score > 2001 and comp_score <= 2001:
                 result = "Player wins!"
                 return render_template("form.html", player_score=player_score, comp_score=comp_score, result=result)
