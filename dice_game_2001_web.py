@@ -60,5 +60,6 @@ def roll(num=2):
                 result = "Draw!"
                 return render_template("form.html", player_score=player_score, comp_score=comp_score, result=result)
 
+
 if __name__ == "__main__":
     app.run(debug=True, port=5002)
