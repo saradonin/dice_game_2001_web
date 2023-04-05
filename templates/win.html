@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>2001 Dice Game</title>
+</head>
+<body>
+<div class="container">
+
+    <h1>2001 Dice Game</h1>
+
+    <form action="" method="POST">
+
+        <div class="lower">
+            <div class="buttons">
+                <a href="/">
+                    <form action="/">
+                         <input class="btn" type="button" value="Reset" />
+                    </form>
+                </a>
+                <input type="hidden" name="comp_score" value="{{ comp_score }}">
+                <input type="hidden" name="player_score" value="{{ player_score }}">
+            </div>
+            <div class="text">
+                <h2>Player score: {{ player_score }}</h2>
+                <h2>Computer score: {{ comp_score }}</h2>
+            </div>
+
+        </div>
+    </form>
+
+    {% if result %}
+    <h1>{{ result }}</h1>
+    {% endif %}
+</div>
+
+</body>
+</html>
+</body>
+</html>

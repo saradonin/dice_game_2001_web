@@ -46,20 +46,19 @@ def roll(num=2):
             player_score = calculate_score(player_score, player_roll)
             comp_score = calculate_score(comp_score, comp_roll)
 
-            # player_roll_str = ", ".join([str(i) for i in player_roll])
-            # comp_roll_str = ", ".join([str(i) for i in comp_roll])
             if player_score < 2001 and comp_score < 2001:
                 return render_template("form.html", player_score=player_score, comp_score=comp_score)
             elif player_score > 2001 and comp_score <= 2001:
                 result = "Player wins!"
-                return render_template("form.html", player_score=player_score, comp_score=comp_score, result=result)
+                return render_template("win.html", player_score=player_score, comp_score=comp_score, result=result)
             elif player_score <= 2001 and comp_score > 2001:
                 result = "Computer wins!"
-                return render_template("form.html", player_score=player_score, comp_score=comp_score, result=result)
+                return render_template("win.html", player_score=player_score, comp_score=comp_score, result=result)
             elif player_score > 2001 and comp_score > 2001:
                 result = "Draw!"
-                return render_template("form.html", player_score=player_score, comp_score=comp_score, result=result)
+                return render_template("win.html", player_score=player_score, comp_score=comp_score, result=result)
 
+    # work in progress - requires some kind of reset after win/loose
 
 if __name__ == "__main__":
     app.run(debug=True, port=5002)
