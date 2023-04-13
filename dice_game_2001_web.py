@@ -38,7 +38,7 @@ def roll(num=2):
 
         while True:
             player_size = int(request.form.get("dice"))
-            comp_size = size_list[random.randint(0, 7)]
+            comp_size = size_list[random.randint(0, len(size_list) - 1)]
 
             player_roll = [random.randint(1, player_size) for i in range(num)]
             comp_roll = [random.randint(1, comp_size) for i in range(num)]
@@ -58,7 +58,6 @@ def roll(num=2):
                 result = "Draw!"
                 return render_template("win.html", player_score=player_score, comp_score=comp_score, result=result)
 
-    # work in progress - requires some kind of reset after win/loose
 
 if __name__ == "__main__":
     app.run(debug=True, port=5002)
